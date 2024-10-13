@@ -8,9 +8,9 @@
   </head>
   <body>
     <div class="calculator">
-      <input type="text" class="display" id="display" disabled/>
+      <input type="text" class="display" id="display" disabled />
       <div class="buttons">
-        <button class="btn clear">
+        <button class="btn clear" onclick="clearDisplay()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -26,8 +26,8 @@
             />
           </svg>
         </button>
-        <button class="btn">%</button>
-        <button class="btn">/</button>
+        <button class="btn" onclick="addOperator('%')">%</button>
+        <button class="btn" onclick="addOperator('/')">/</button>
         <button class="btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,21 +44,21 @@
             />
           </svg>
         </button>
-        <button class="btn">7</button>
-        <button class="btn">8</button>
-        <button class="btn">9</button>
-        <button class="btn">*</button>
-        <button class="btn">4</button>
-        <button class="btn">5</button>
-        <button class="btn">6</button>
-        <button class="btn">-</button>
-        <button class="btn">1</button>
-        <button class="btn">2</button>
-        <button class="btn">3</button>
-        <button class="btn">+</button>
-        <button class="btn zero">0</button>
-        <button class="btn">.</button>
-        <button class="btn equal">=</button>
+        <button class="btn" onclick="addNumber(7)">7</button>
+        <button class="btn" onclick="addNumber(8)">8</button>
+        <button class="btn" onclick="addNumber(9)">9</button>
+        <button class="btn" onclick="addOperator('*')">*</button>
+        <button class="btn" onclick="addNumber(4)">4</button>
+        <button class="btn" onclick="addNumber(5)">5</button>
+        <button class="btn" onclick="addNumber(6)">6</button>
+        <button class="btn" onclick="addOperator('-')">-</button>
+        <button class="btn" onclick="addNumber(1)">1</button>
+        <button class="btn" onclick="addNumber(2)">2</button>
+        <button class="btn" onclick="addNumber(3)">3</button>
+        <button class="btn" onclick="addOperator('+')">+</button>
+        <button class="btn zero" onclick="addNumber(0)">0</button>
+        <button class="btn" onclick="addNumber('.')">.</button>
+        <button class="btn equal" onclick="resolveOperation()">=</button>
       </div>
     </div>
     <script src="main.js"></script>
