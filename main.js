@@ -37,19 +37,21 @@ const clearDisplay = () => {
 const operator = (n1, n2, op) => {
   let [a, b] = [parseInt(n1), parseInt(n2)];
   console.log(n1, n2, op, a, b);
-  return n2 === ""
-    ? a
-    : op === ""
+  return n1 === ""
+    ? "0"
+    : n2 === ""
       ? a
-      : op === "+"
-        ? a + b
-        : op === "-"
-          ? a - b
-          : op === "*"
-            ? a * b
-            : op === "/"
-              ? a / b
-              : alert("Error!!!");
+      : op === ""
+        ? a
+        : op === "+"
+          ? a + b
+          : op === "-"
+            ? a - b
+            : op === "*"
+              ? a * b
+              : op === "/"
+                ? a / b
+                : alert("Error!!!");
 };
 
 const resolveOperation = () => {
@@ -57,4 +59,19 @@ const resolveOperation = () => {
   data = ["", "", ""];
   pos = 0;
   lastOperator = 1;
+};
+
+const deleteButton = () => {
+  if (data[pos] === "") {
+    if (data[pos - 1] === "") {
+      let i = data[pos - 2].length;
+      data[pos - 2] = data[pos - 2].slice(0, -1);
+    }
+    let i = data[pos - 1].length;
+    data[pos - 1] = data[pos - 1].slice(0, -1);
+  } else {
+    let i = data[pos].length;
+    data[pos] = data[pos].slice(0, -1);
+  }
+  display.value = data.join("");
 };
