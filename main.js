@@ -34,7 +34,7 @@ const clearDisplay = () => {
 };
 
 const operator = (n1, n2, op) => {
-  let [a, b] = [parseInt(n1), parseInt(n2)];
+  let [a, b] = [parseFloat(n1), parseFloat(n2)];
   return n1 === ""
     ? "0"
     : n2 === ""
